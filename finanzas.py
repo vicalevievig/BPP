@@ -9,6 +9,13 @@ def cambiar_int(month):
         df[month] = df[month].astype(str).astype(int)
         return df[month]
 
+def contar_meses():
+    numero_meses = len(df.columns)
+    return numero_meses
+
+def contar_filas():
+    numero_filas = len(df)
+    return numero_filas
 
 
 # LEER ARCHIVO CSV
@@ -18,9 +25,9 @@ except:
     print("No se ha encontrado ningún archivo para leer")
 else:
     lista =["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
-    numero_meses = len(df.columns)
-    numero_filas = len(df)
-    if numero_meses == 12 and numero_filas >= 1:
+    
+    
+    if contar_meses() == 12 and contar_filas() >= 1:
         print("Archivo encontrado")
         print()
         print(df.head())
